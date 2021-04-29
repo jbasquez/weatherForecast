@@ -4,8 +4,14 @@ body{
     background-color: rgb(32, 191, 191);
 }
 .current{
-    max-width: 40%;
+    max-width: 30%;
     background-color:white;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 37%;
+}
+.days{
+    max-width: 30%;
+    background-color:white;
+    text-align: center;
+    margin-left: 37%;
 }
