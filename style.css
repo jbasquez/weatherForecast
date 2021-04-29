@@ -15,3 +15,13 @@ body{
     text-align: center;
     margin-left: 37%;
 }
+.header{
+    font-size: 35px;
+    font-weight: bold;
+    color: cyan;
+}
+.blurr{
+    background-color:black;
+    max-width: 33%;
+    margin-left: 35%;
+}
