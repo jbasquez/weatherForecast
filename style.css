@@ -3,3 +3,8 @@ body{
     padding: 100px 0;
     background-color: rgb(32, 191, 191);
 }
+.current{
+    max-width: 40%;
+    background-color:white;
+    text-align: center;
+    margin-left: 30%;
