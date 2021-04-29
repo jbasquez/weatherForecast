@@ -1,7 +1,7 @@
 body{
     text-align: center;
     padding: 100px 0;
-    background-color: rgb(32, 191, 191);
+    background-image: url("./weatherImg.png");
 }
 .current{
     max-width: 30%;
