@@ -5,13 +5,13 @@ body{
 }
 .current{
     max-width: 30%;
-    background-color:white;
+    background-color:lightblue;
     text-align: center;
     margin-left: 37%;
 }
 .days{
     max-width: 30%;
-    background-color:white;
+    background-color:lightblue;
     text-align: center;
     margin-left: 37%;
 }
