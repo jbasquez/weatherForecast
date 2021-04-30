@@ -20,11 +20,17 @@ var humid = document.querySelector('.humid');
 var wind = document.querySelector('.wind');
 var visability = document.querySelector('.visability')
 var icon = document.querySelector('.icon');
+var savedCity = document.querySelector('.savedCity');
+
+localStorage.setItem("savedCity", "fayetteville");
+console.log(localStorage);
+// console.log(localStorage.getItem("savedCity"));
 
 button.addEventListener('click',function(){
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
     .then(response => response.json())
     .then(data => {
+        
         var cityValue = data['city']['name'];
         var dateValue = data['list']['0']['dt_txt'];
         var tempValue = data['list']['0']['main']['temp'];
