@@ -50,19 +50,19 @@ button.addEventListener('click',function(){
 
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
-        temp.innerHTML = 'tempature in Kelvin: '+ tempValue;
+        temp.innerHTML = 'Tempature in Kelvin: '+ tempValue;
         weather.innerHTML = 'Forecast: '+ weatherValue;
         date0.innerHTML = `Date: ${dateValue0}`;
-        temp0.innerHTML = 'tempature in Kelvin: '+ tempValue0;
+        temp0.innerHTML = 'Tempature in Kelvin: '+ tempValue0;
         weather0.innerHTML = 'Forecast: '+ weatherValue0;
         date1.innerHTML = `Date: ${dateValue1}`;
-        temp1.innerHTML= 'tempature in Kelvin: '+ tempValue1;
+        temp1.innerHTML= 'Tempature in Kelvin: '+ tempValue1;
         weather1.innerHTML = 'Forecast: '+ weatherValue1;
         date2.innerHTML = `Date: ${dateValue2}`;
-        temp2.innerHTML = 'tempature in Kelvin: '+ tempValue2;
+        temp2.innerHTML = 'Tempature in Kelvin: '+ tempValue2;
         weather2.innerHTML= 'Forecast: '+ weatherValue2;
         date3.innerHTML = `Date: ${dateValue3}`;
-        temp3.innerHTML = 'tempature in kelvin: '+ tempValue3;
+        temp3.innerHTML = 'Tempature in kelvin: '+ tempValue3;
         weather3.innerHTML = 'Forecast: '+ weatherValue3;
         humid.innerHTML = 'Humidity: '+ humidValue;
         wind.innerHTML = 'Wind Speed: '+ windValue;
