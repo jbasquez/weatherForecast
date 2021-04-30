@@ -45,7 +45,7 @@ button.addEventListener('click',function(){
         var tempValue3 = data['list']['31']['main']['temp'];
         var weatherValue3 = data['list']['31']['weather']['0']['description'];
         var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
-        
+
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
         temp.innerHTML = 'Tempature in Kelvin: '+ tempValue;
@@ -54,13 +54,13 @@ button.addEventListener('click',function(){
         temp0.innerHTML = 'Tempature in Kelvin: '+ tempValue0;
         weather0.innerHTML = 'Forecast: '+ weatherValue0;
         date1.innerHTML = `Date: ${dateValue1}`;
-        temp1.innerHTML= 'Tempature in Kelvin: '+ tempValue1;
+        temp1.innerHTML = 'Tempature in Kelvin: '+ tempValue1;
         weather1.innerHTML = 'Forecast: '+ weatherValue1;
         date2.innerHTML = `Date: ${dateValue2}`;
         temp2.innerHTML = 'Tempature in Kelvin: '+ tempValue2;
         weather2.innerHTML= 'Forecast: '+ weatherValue2;
         date3.innerHTML = `Date: ${dateValue3}`;
-        temp3.innerHTML = 'Tempature in kelvin: '+ tempValue3;
+        temp3.innerHTML = 'Tempature in Kelvin: '+ tempValue3;
         weather3.innerHTML = 'Forecast: '+ weatherValue3;
         humid.innerHTML = 'Humidity: '+ humidValue;
         wind.innerHTML = 'Wind Speed: '+ windValue;
