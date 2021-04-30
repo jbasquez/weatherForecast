@@ -29,6 +29,9 @@ button.addEventListener('click',function(){
         var dateValue = data['list']['0']['dt_txt'];
         var tempValue = data['list']['0']['main']['temp'];
         var weatherValue = data['list']['0']['weather']['0']['description'];
+        var humidValue = data['list']['0']['main']['humidity'];
+        var windValue = data['list']['0']['wind']['speed'];
+        var visabilityValue = data['list']['0']['visibility']
         var dateValue0 = data['list']['7']['dt_txt'];
         var tempValue0 = data['list']['7']['main']['temp'];
         var weatherValue0 = data['list']['7']['weather']['0']['description'];
@@ -41,9 +44,7 @@ button.addEventListener('click',function(){
         var dateValue3 = data['list']['31']['dt_txt'];
         var tempValue3 = data['list']['31']['main']['temp'];
         var weatherValue3 = data['list']['31']['weather']['0']['description'];
-        var humidValue = data['list']['0']['main']['humidity'];
-        var windValue = data['list']['0']['wind']['speed'];
-        var visabilityValue = data['list']['0']['visibility']
+        
         console.log(visabilityValue)
         //var iconValue =data['list']['0']['weather']['icon'];
 
