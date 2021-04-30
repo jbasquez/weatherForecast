@@ -15,11 +15,11 @@ var weather2 = document.querySelector('.weather2');
 var temp2 = document.querySelector('.temp2');
 var date3 = document.querySelector('.date3');
 var weather3 = document.querySelector('.weather3');
-var temp3= document.querySelector('.temp3');
-var humid= document.querySelector('.humid');
-var wind= document.querySelector('.wind');
+var temp3 = document.querySelector('.temp3');
+var humid = document.querySelector('.humid');
+var wind = document.querySelector('.wind');
 var visability = document.querySelector('.visability')
-//var icon= document.querySelector('.icon');
+var icon = document.querySelector('.icon');
 
 button.addEventListener('click',function(){
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
@@ -41,31 +41,32 @@ button.addEventListener('click',function(){
         var dateValue3 = data['list']['29']['dt_txt'];
         var tempValue3 = data['list']['29']['main']['temp'];
         var weatherValue3 = data['list']['29']['weather']['0']['description'];
-        var humidValue= data['list']['0']['main']['humidity'];
-        var windValue= data['list']['0']['wind']['speed'];
-        var visabilityValue= data['list']['0']['visibility']
+        var humidValue = data['list']['0']['main']['humidity'];
+        var windValue = data['list']['0']['wind']['speed'];
+        var visabilityValue = data['list']['0']['visibility']
         console.log(visabilityValue)
-        //var iconValue =data.list[0][weather][0][icon];
+        //var iconValue =data['list']['0']['weather']['icon'];
 
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
-        temp.innerHTML= 'tempature in Kelvin: '+ tempValue;
-        weather.innerHTML= 'Forecast: '+ weatherValue;
+        temp.innerHTML = 'tempature in Kelvin: '+ tempValue;
+        weather.innerHTML = 'Forecast: '+ weatherValue;
         date0.innerHTML = `Date: ${dateValue0}`;
-        temp0.innerHTML= 'tempature in Kelvin: '+ tempValue0;
-        weather0.innerHTML= 'Forecast: '+ weatherValue0;
+        temp0.innerHTML = 'tempature in Kelvin: '+ tempValue0;
+        weather0.innerHTML = 'Forecast: '+ weatherValue0;
         date1.innerHTML = `Date: ${dateValue1}`;
         temp1.innerHTML= 'tempature in Kelvin: '+ tempValue1;
-        weather1.innerHTML= 'Forecast: '+ weatherValue1;
+        weather1.innerHTML = 'Forecast: '+ weatherValue1;
         date2.innerHTML = `Date: ${dateValue2}`;
-        temp2.innerHTML= 'tempature in Kelvin: '+ tempValue2;
+        temp2.innerHTML = 'tempature in Kelvin: '+ tempValue2;
         weather2.innerHTML= 'Forecast: '+ weatherValue2;
         date3.innerHTML = `Date: ${dateValue3}`;
-        temp3.innerHTML= 'tempature in kelvin: '+ tempValue3;
-        weather3.innerHTML= 'Forecast: '+ weatherValue3;
-        humid.innerHTML= 'Humidity: '+ humidValue;
-        wind.innerHTML= 'Wind Speed: '+ windValue;
-        visability.innerHTML= 'Visability: '+ visabilityValue;
-        //icon.src= iconValue;
+        temp3.innerHTML = 'tempature in kelvin: '+ tempValue3;
+        weather3.innerHTML = 'Forecast: '+ weatherValue3;
+        humid.innerHTML = 'Humidity: '+ humidValue;
+        wind.innerHTML = 'Wind Speed: '+ windValue;
+        visability.innerHTML = 'Visability: '+ visabilityValue;
+        //icon= iconValue;
+        //was icon.src=iconValue;
     })
 })
