@@ -32,9 +32,9 @@ button.addEventListener('click',function(){
         var dateValue0 = data['list']['7']['dt_txt'];
         var tempValue0 = data['list']['7']['main']['temp'];
         var weatherValue0 = data['list']['7']['weather']['0']['description'];
-        var dateValue1 = data['list']['8']['dt_txt'];
-        var tempValue1 = data['list']['8']['main']['temp'];
-        var weatherValue1 = data['list']['8']['weather']['0']['description'];
+        var dateValue1 = data['list']['15']['dt_txt'];
+        var tempValue1 = data['list']['15']['main']['temp'];
+        var weatherValue1 = data['list']['15']['weather']['0']['description'];
         var dateValue2 = data['list']['20']['dt_txt'];
         var tempValue2 = data['list']['20']['main']['temp'];
         var weatherValue2 = data['list']['20']['weather']['0']['description'];
