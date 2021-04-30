@@ -44,10 +44,8 @@ button.addEventListener('click',function(){
         var dateValue3 = data['list']['31']['dt_txt'];
         var tempValue3 = data['list']['31']['main']['temp'];
         var weatherValue3 = data['list']['31']['weather']['0']['description'];
-        
-        console.log(visabilityValue)
         var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
-        console.log(iconValue);
+        
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
         temp.innerHTML = 'Tempature in Kelvin: '+ tempValue;
@@ -68,6 +66,5 @@ button.addEventListener('click',function(){
         wind.innerHTML = 'Wind Speed: '+ windValue;
         visability.innerHTML = 'Visability: '+ visabilityValue;
         icon.src = iconValue;
-        //was icon.src=iconValue;
     })
 })
