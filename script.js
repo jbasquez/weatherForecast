@@ -38,9 +38,9 @@ button.addEventListener('click',function(){
         var dateValue2 = data['list']['23']['dt_txt'];
         var tempValue2 = data['list']['23']['main']['temp'];
         var weatherValue2 = data['list']['23']['weather']['0']['description'];
-        var dateValue3 = data['list']['29']['dt_txt'];
-        var tempValue3 = data['list']['29']['main']['temp'];
-        var weatherValue3 = data['list']['29']['weather']['0']['description'];
+        var dateValue3 = data['list']['31']['dt_txt'];
+        var tempValue3 = data['list']['31']['main']['temp'];
+        var weatherValue3 = data['list']['31']['weather']['0']['description'];
         var humidValue = data['list']['0']['main']['humidity'];
         var windValue = data['list']['0']['wind']['speed'];
         var visabilityValue = data['list']['0']['visibility']
