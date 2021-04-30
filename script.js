@@ -54,6 +54,8 @@ button.addEventListener('click',function(){
         var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
 
         console.log(value);
+        localStorage.setItem(savedCity, value);
+        location.reload();
 
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
