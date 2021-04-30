@@ -22,8 +22,8 @@ var visability = document.querySelector('.visability')
 var icon = document.querySelector('.icon');
 var savedCity = document.querySelector('.savedCity');
 
-localStorage.setItem("savedCity", "fayetteville");
-console.log(localStorage);
+// localStorage.setItem("savedCity", "fayetteville");
+// console.log(localStorage);
 // console.log(localStorage.getItem("savedCity"));
 
 button.addEventListener('click',function(){
@@ -32,6 +32,7 @@ button.addEventListener('click',function(){
     .then(data => {
         
         var cityValue = data['city']['name'];
+        var value = inputValue.value;
         var dateValue = data['list']['0']['dt_txt'];
         var tempValue = data['list']['0']['main']['temp'];
         var weatherValue = data['list']['0']['weather']['0']['description'];
@@ -51,6 +52,8 @@ button.addEventListener('click',function(){
         var tempValue3 = data['list']['31']['main']['temp'];
         var weatherValue3 = data['list']['31']['weather']['0']['description'];
         var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
+
+        console.log(value);
 
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
