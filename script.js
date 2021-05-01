@@ -25,7 +25,7 @@ var savedCity = document.querySelector('.savedCity');
 // localStorage.setItem("savedCity", "fayetteville");
 // console.log(localStorage);
 // console.log(localStorage.getItem("savedCity"));
-
+document.addEventListener("DOMContentLoaded", function(){
 button.addEventListener('click',function(){
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
     .then(response => response.json())
@@ -55,8 +55,8 @@ button.addEventListener('click',function(){
         var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
         
         console.log(value);
-        localStorage.setItem(savedCity, JSON.stringify(value));
-        //location.reload();
+        localStorage.setItem("savedCity", JSON.stringify(value));
+        // local.reload();
 
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
@@ -78,7 +78,8 @@ button.addEventListener('click',function(){
         wind.innerHTML = 'Wind Speed: '+ windValue;
         visability.innerHTML = 'Visability: '+ visabilityValue;
         icon.src = iconValue;
-        const oldSearch = JSON.parse(localStorage.getItem(savedCity));
+        const oldSearch = JSON.parse(localStorage.getItem("savedCity"));
         savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
     })
+})
 })
