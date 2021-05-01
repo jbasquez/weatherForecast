@@ -33,6 +33,7 @@ button.addEventListener('click',function(){
         
         var cityValue = data['city']['name'];
         var value = inputValue.value;
+        // value.push(inputValue.value);
         var dateValue = data['list']['0']['dt_txt'];
         var tempValue = data['list']['0']['main']['temp'];
         var weatherValue = data['list']['0']['weather']['0']['description'];
@@ -52,10 +53,10 @@ button.addEventListener('click',function(){
         var tempValue3 = data['list']['31']['main']['temp'];
         var weatherValue3 = data['list']['31']['weather']['0']['description'];
         var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
-
+        
         console.log(value);
-        localStorage.setItem(savedCity, value);
-        location.reload();
+        localStorage.setItem(savedCity, JSON.stringify(value));
+        //location.reload();
 
         city.innerHTML = cityValue;
         date.innerHTML = `Date: ${dateValue}`;
@@ -77,5 +78,7 @@ button.addEventListener('click',function(){
         wind.innerHTML = 'Wind Speed: '+ windValue;
         visability.innerHTML = 'Visability: '+ visabilityValue;
         icon.src = iconValue;
+        const oldSearch = JSON.parse(localStorage.getItem(savedCity));
+        savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
     })
 })
