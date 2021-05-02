@@ -26,6 +26,9 @@ var savedCity = document.querySelector('.savedCity');
 // console.log(localStorage);
 // console.log(localStorage.getItem("savedCity"));
 document.addEventListener("DOMContentLoaded", function(){
+    const oldSearch = JSON.parse(localStorage.getItem("savedCity"));
+    console.log(oldSearch);
+    savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
 button.addEventListener('click',function(){
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
     .then(response => response.json())
@@ -78,7 +81,6 @@ button.addEventListener('click',function(){
         wind.innerHTML = 'Wind Speed: '+ windValue;
         visability.innerHTML = 'Visability: '+ visabilityValue;
         icon.src = iconValue;
-        const oldSearch = JSON.parse(localStorage.getItem("savedCity"));
         savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
     })
 })
