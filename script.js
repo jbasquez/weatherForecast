@@ -1,3 +1,4 @@
+//making var connections to index.html
 var button = document.querySelector('.button');
 var inputValue = document.querySelector('.inputValue');
 var city = document.querySelector('.city');
@@ -25,63 +26,67 @@ var savedCity = document.querySelector('.savedCity');
 // localStorage.setItem("savedCity", "fayetteville");
 // console.log(localStorage);
 // console.log(localStorage.getItem("savedCity"));
+
+//wait for DOM to load then check local storage for old searches
 document.addEventListener("DOMContentLoaded", function(){
     const oldSearch = JSON.parse(localStorage.getItem("savedCity"));
-    console.log(oldSearch);
+    // console.log(oldSearch);
+    //sets saved city from index.html to the old search taken from the local storage
     savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
-button.addEventListener('click',function(){
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
-    .then(response => response.json())
-    .then(data => {
-        
-        var cityValue = data['city']['name'];
-        var value = inputValue.value;
-        // value.push(inputValue.value);
-        var dateValue = data['list']['0']['dt_txt'];
-        var tempValue = data['list']['0']['main']['temp'];
-        var weatherValue = data['list']['0']['weather']['0']['description'];
-        var humidValue = data['list']['0']['main']['humidity'];
-        var windValue = data['list']['0']['wind']['speed'];
-        var visabilityValue = data['list']['0']['visibility']
-        var dateValue0 = data['list']['7']['dt_txt'];
-        var tempValue0 = data['list']['7']['main']['temp'];
-        var weatherValue0 = data['list']['7']['weather']['0']['description'];
-        var dateValue1 = data['list']['15']['dt_txt'];
-        var tempValue1 = data['list']['15']['main']['temp'];
-        var weatherValue1 = data['list']['15']['weather']['0']['description'];
-        var dateValue2 = data['list']['23']['dt_txt'];
-        var tempValue2 = data['list']['23']['main']['temp'];
-        var weatherValue2 = data['list']['23']['weather']['0']['description'];
-        var dateValue3 = data['list']['31']['dt_txt'];
-        var tempValue3 = data['list']['31']['main']['temp'];
-        var weatherValue3 = data['list']['31']['weather']['0']['description'];
-        var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
-        
-        console.log(value);
-        localStorage.setItem("savedCity", JSON.stringify(value));
-        // local.reload();
 
-        city.innerHTML = cityValue;
-        date.innerHTML = `Date: ${dateValue}`;
-        temp.innerHTML = 'Tempature in Kelvin: '+ tempValue;
-        weather.innerHTML = 'Forecast: '+ weatherValue;
-        date0.innerHTML = `Date: ${dateValue0}`;
-        temp0.innerHTML = 'Tempature in Kelvin: '+ tempValue0;
-        weather0.innerHTML = 'Forecast: '+ weatherValue0;
-        date1.innerHTML = `Date: ${dateValue1}`;
-        temp1.innerHTML = 'Tempature in Kelvin: '+ tempValue1;
-        weather1.innerHTML = 'Forecast: '+ weatherValue1;
-        date2.innerHTML = `Date: ${dateValue2}`;
-        temp2.innerHTML = 'Tempature in Kelvin: '+ tempValue2;
-        weather2.innerHTML= 'Forecast: '+ weatherValue2;
-        date3.innerHTML = `Date: ${dateValue3}`;
-        temp3.innerHTML = 'Tempature in Kelvin: '+ tempValue3;
-        weather3.innerHTML = 'Forecast: '+ weatherValue3;
-        humid.innerHTML = 'Humidity: '+ humidValue;
-        wind.innerHTML = 'Wind Speed: '+ windValue;
-        visability.innerHTML = 'Visability: '+ visabilityValue;
-        icon.src = iconValue;
-        savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
+    button.addEventListener('click',function(){
+        fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
+        .then(response => response.json())
+        .then(data => {
+            
+            var cityValue = data['city']['name'];
+            var value = inputValue.value;
+            // value.push(inputValue.value);
+            var dateValue = data['list']['0']['dt_txt'];
+            var tempValue = data['list']['0']['main']['temp'];
+            var weatherValue = data['list']['0']['weather']['0']['description'];
+            var humidValue = data['list']['0']['main']['humidity'];
+            var windValue = data['list']['0']['wind']['speed'];
+            var visabilityValue = data['list']['0']['visibility']
+            var dateValue0 = data['list']['7']['dt_txt'];
+            var tempValue0 = data['list']['7']['main']['temp'];
+            var weatherValue0 = data['list']['7']['weather']['0']['description'];
+            var dateValue1 = data['list']['15']['dt_txt'];
+            var tempValue1 = data['list']['15']['main']['temp'];
+            var weatherValue1 = data['list']['15']['weather']['0']['description'];
+            var dateValue2 = data['list']['23']['dt_txt'];
+            var tempValue2 = data['list']['23']['main']['temp'];
+            var weatherValue2 = data['list']['23']['weather']['0']['description'];
+            var dateValue3 = data['list']['31']['dt_txt'];
+            var tempValue3 = data['list']['31']['main']['temp'];
+            var weatherValue3 = data['list']['31']['weather']['0']['description'];
+            var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
+            
+            console.log(value);
+            localStorage.setItem("savedCity", JSON.stringify(value));
+            // local.reload();
+
+            city.innerHTML = cityValue;
+            date.innerHTML = `Date: ${dateValue}`;
+            temp.innerHTML = 'Tempature in Kelvin: '+ tempValue;
+            weather.innerHTML = 'Forecast: '+ weatherValue;
+            date0.innerHTML = `Date: ${dateValue0}`;
+            temp0.innerHTML = 'Tempature in Kelvin: '+ tempValue0;
+            weather0.innerHTML = 'Forecast: '+ weatherValue0;
+            date1.innerHTML = `Date: ${dateValue1}`;
+            temp1.innerHTML = 'Tempature in Kelvin: '+ tempValue1;
+            weather1.innerHTML = 'Forecast: '+ weatherValue1;
+            date2.innerHTML = `Date: ${dateValue2}`;
+            temp2.innerHTML = 'Tempature in Kelvin: '+ tempValue2;
+            weather2.innerHTML= 'Forecast: '+ weatherValue2;
+            date3.innerHTML = `Date: ${dateValue3}`;
+            temp3.innerHTML = 'Tempature in Kelvin: '+ tempValue3;
+            weather3.innerHTML = 'Forecast: '+ weatherValue3;
+            humid.innerHTML = 'Humidity: '+ humidValue;
+            wind.innerHTML = 'Wind Speed: '+ windValue;
+            visability.innerHTML = 'Visability: '+ visabilityValue;
+            icon.src = iconValue;
+            savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
+        })
     })
-})
 })
