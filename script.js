@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function(){
     // console.log(oldSearch);
     //sets saved city from index.html to the old search taken from the local storage
     savedCity.innerHTML = `Last Search: ${oldSearch}<br />`;
-
+    //button waits for click to search the api for the value typed in and returns response
     button.addEventListener('click',function(){
         fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=6ba9c7b56220b9534a05654f858b3639')
         .then(response => response.json())
         .then(data => {
-            
+            //connections within apis index to vars
             var cityValue = data['city']['name'];
             var value = inputValue.value;
             // value.push(inputValue.value);
@@ -62,10 +62,12 @@ document.addEventListener("DOMContentLoaded", function(){
             var weatherValue3 = data['list']['31']['weather']['0']['description'];
             var iconValue = `https://openweathermap.org/img/wn/${ data.list[0].weather[0].icon }.png`;
             
-            console.log(value);
+            // console.log(value);
+            //saves searched cities to local storage
             localStorage.setItem("savedCity", JSON.stringify(value));
             // local.reload();
 
+            //sets inner HTML to the api vars made
             city.innerHTML = cityValue;
             date.innerHTML = `Date: ${dateValue}`;
             temp.innerHTML = 'Tempature in Kelvin: '+ tempValue;
